@@ -5,7 +5,7 @@ import { TransactionYear } from './TransactionYear'
 function Users(props) {
   return (
     <>
-      <h2>{props.month} {props.year}</h2>
+      <h2> Month Year</h2>
       <table id='customers'>
         <thead>
           <tr>

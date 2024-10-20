@@ -7,6 +7,8 @@ export function UserCombine() {
     <>
       <h1>User Monthly Rewards</h1>
       <Users sortedDate={DateSort()} />
+      <Users sortedDate={DateSort()} />
+      <Users sortedDate={DateSort()} />
     </>
   )
 }
