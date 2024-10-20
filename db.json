@@ -1,0 +1,44 @@
+{
+  "userData": [
+    {
+      "transactionId": 1,
+      "customerId": "C001",
+      "customerName": "John Doe",
+      "purchaseDate": "2023/12/21",
+      "producedPurchased": "laptop",
+      "price": 120
+    },
+    {
+      "transactionId": 2,
+      "customerId": "C002",
+      "customerName": "John Smith",
+      "purchaseDate": "2024/01/10",
+      "producedPurchased": "Headphone",
+      "price": 75
+    },
+    {
+      "transactionId": 3,
+      "customerId": "C001",
+      "customerName": "John Doe",
+      "purchaseDate": "2024/02/05",
+      "producedPurchased": "Phone",
+      "price": 200
+    },
+    {
+      "transactionId": 4,
+      "customerId": "C003",
+      "customerName": "Alice Johnson",
+      "purchaseDate": "2024/01/15",
+      "producedPurchased": "Monitor",
+      "price": 150
+    },
+    {
+      "transactionId": 5,
+      "customerId": "C002",
+      "customerName": "John Smith",
+      "purchaseDate": "2023/12/30",
+      "producedPurchased": "Tablet",
+      "price": 100.4
+    }
+  ]
+}

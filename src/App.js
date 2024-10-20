@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState, useEffect, createContext } from "react";
+import Rewards from "./components/Rewards";
+import Transaction from "./components/Transaction";
+import { UserCombine } from "./components/UserCombine";
+
+export const userDataContext = createContext(null);
 
 function App() {
+  const [userData, setUserData] = useState([]);
+  const [isLoading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch("http://localhost:4000/userData")
+      .then((res) => res.json())
+      .then((data) => setUserData(data))
+      .then(() => setLoading(false))
+      .catch((error) => setError(error.message));
+  },[userData]);
+
+  if (error) {
+    return <h2>Error: {error}</h2>;
+  }
+
+  if (isLoading) {
+    return <h2>Loading...</h2>;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <userDataContext.Provider value={userData}>
+      <UserCombine />
+      <Rewards />
+      <Transaction />
+    </userDataContext.Provider>
   );
 }
 
