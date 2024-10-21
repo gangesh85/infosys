@@ -3,9 +3,9 @@ import { ToLocalDate } from './ToLocalDate'
 import { TransactionYear } from './TransactionYear'
 
 function Users(props) {
-  return (
+    return (
     <>
-      <h2> Month Year</h2>
+      <h3> {props.month} {props.year}</h3>
       <table id='customers'>
         <thead>
           <tr>

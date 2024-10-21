@@ -1,10 +1,10 @@
 import { DataFilter } from './DataFilter';
 
 const Rewards = () => {
-  const uniqueData = DataFilter() 
+  const uniqueData = DataFilter()
   return (
     <>
-      <h1>Total Rewards</h1>
+      <h2>Total Rewards</h2>
       <table id='customers'>
         <thead>
           <tr>
@@ -16,10 +16,12 @@ const Rewards = () => {
         <tbody>
           {
             uniqueData.map((data) => {
-              return <tr key={data.transactionId}>
-                <td>{data.customerName}</td>
-                <td>{data.price}</td>
-              </tr>
+              return (
+                <tr key={data.transactionId}>
+                  <td>{data.customerName}</td>
+                  <td>{data.price}</td>
+                </tr>
+              )
             })
           }
         </tbody>

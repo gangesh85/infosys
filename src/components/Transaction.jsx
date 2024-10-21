@@ -8,7 +8,7 @@ const Transaction = () => {
     
     return (
         <>
-            <h1>All Transaction</h1>
+            <h2>All Transaction</h2>
             <table id='customers'>
                 <thead>
                     <tr>
