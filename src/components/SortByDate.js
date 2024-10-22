@@ -1,9 +1,4 @@
-import { useContext } from "react";
-import { userDataContext } from "../App";
-
-export function DateSort(sortedDate) {
-  const userData = useContext(userDataContext);
-
+export function SortByDate(userData, sortedDate) {
   const cloneUserData = [...userData];
   const dateSort = (a, b) => {
     const dateA = new Date(a.purchaseDate);
@@ -12,5 +7,5 @@ export function DateSort(sortedDate) {
     if (dateA < dateB) return -1;
     return 0;
   };
-  return sortedDate = cloneUserData.sort(dateSort);
+  return (sortedDate = cloneUserData.sort(dateSort));
 }

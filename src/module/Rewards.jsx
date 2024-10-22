@@ -1,7 +1,19 @@
-import { DataFilter } from './DataFilter';
+import { useMemo } from 'react';
+import { useApi } from "../services/api";
+import {filterByName} from "../components/filterByName"
 
 const Rewards = () => {
-  const uniqueData = DataFilter()
+  const { data, loading, error } = useApi()
+  const memoData = useMemo(() => data, [data])
+  const uniqueData = filterByName(memoData)
+
+  if (error) {
+    return <h3>ErrorMessage : {error}</h3>
+  }
+  if (loading) {
+    return <h3>Loading..</h3>
+  }
+
   return (
     <>
       <h2>Total Rewards</h2>

@@ -1,6 +1,6 @@
-import { PriceToPoint } from './PriceToPoint'
-import { ToLocalDate } from './ToLocalDate'
-import { TransactionYear } from './TransactionYear'
+import { PriceToPoint } from '../components/PriceToPoint'
+import { ToLocalDate } from '../components/ToLocalDate'
+import { TransactionYear } from '../components/TransactionYear'
 
 function Users(props) {
     return (

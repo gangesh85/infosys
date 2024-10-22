@@ -1,11 +1,19 @@
-import { useContext } from 'react';
-import { PriceToPoint } from './PriceToPoint';
-import { userDataContext } from '../App';
-import { ToLocalDate } from './ToLocalDate';
+import { useMemo } from 'react';
+import { PriceToPoint } from '../components/PriceToPoint';
+import { ToLocalDate } from '../components/ToLocalDate';
+import { useApi } from '../services/api';
+
 
 const Transaction = () => {
-    const userData = useContext(userDataContext)
-    
+    const { data, loading, error } = useApi()
+    const memoValue = useMemo(() => data, [data])
+
+    if (error) {
+        return <h3>ErrorMessage: {error}</h3>
+    }
+    if (loading) {
+        return <h3>Loading..</h3>
+    }
     return (
         <>
             <h2>All Transaction</h2>
@@ -24,7 +32,7 @@ const Transaction = () => {
 
                 <tbody>
                     {
-                        userData.map((data) => {
+                        memoValue.map((data) => {
                             return (
                                 <tr key={data.transactionId}>
                                     <td >{data.transactionId}</td>
