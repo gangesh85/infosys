@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-// Create a custom hook for fetching data
+// Create custom hook data for fetching.
 export const useApi = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);

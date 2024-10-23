@@ -20,3 +20,5 @@ export function filterByName(userData) {
   const aggregatedArray = Object.values(result);
   return aggregatedArray;
 }
+
+// filter data by name and aggregate their value

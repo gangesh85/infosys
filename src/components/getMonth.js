@@ -3,20 +3,23 @@ export const getMonth = (data) => {
   const maxDate = new Date(Math.max(...dates.map((date) => date.getTime())));
   const date = maxDate
   
+  // fetch latest month from database.
   const latest = {
     monthIndex: date.getMonth() + 1,
     month: date.toLocaleString('default', { month: 'long' }),
     year: date.getFullYear()
   };
   
-  date.setMonth(date.getMonth() - 1);
+  // fetch second latest month from database
+  date.setMonth(date.getMonth() - 1); 
   const secondlatest = {
     monthIndex: date.getMonth() + 1,
     month: date.toLocaleString('default', { month: 'long' }),
     year: date.getFullYear()
   };
   
-  date.setMonth(date.getMonth() - 1);
+  // fetch third latest month from database
+  date.setMonth(date.getMonth() - 1); 
   const thirdlatest = {
     monthIndex: date.getMonth() + 1,
     month: date.toLocaleString('default', { month: 'long' }),
