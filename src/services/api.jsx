@@ -14,7 +14,7 @@ export const useApi = () => {
       try {
         const res = await fetch(userDataURL);
         const result = await res.json();
-        setData(result);
+        setData(result);        
       } catch (error) {
         setError(error.message);
       } finally {

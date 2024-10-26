@@ -1,13 +1,17 @@
-import { useMemo } from 'react';
+import { useEffect, useState } from 'react';
 import { PriceToPoint } from '../components/PriceToPoint';
 import { ToLocalDate } from '../components/ToLocalDate';
 import { useApi } from '../services/api';
 
 
-const Transaction = () => {
+function Transaction() {
     const { data, loading, error } = useApi()
-    const memoValue = useMemo(() => data, [data])
-
+    const [userData, setUserData] = useState()
+    
+    useEffect(() => {
+        setUserData(data)
+    },[data])
+    
     if (error) {
         return <h3>ErrorMessage: {error}</h3>
     }
@@ -32,7 +36,7 @@ const Transaction = () => {
 
                 <tbody>
                     {
-                        memoValue.map((data) => {
+                        userData.map((data) => {
                             return (
                                 <tr key={data.transactionId}>
                                     <td >{data.transactionId}</td>

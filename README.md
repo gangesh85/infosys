@@ -1,5 +1,10 @@
 # App contains three tables with complex data structure.
-User Monthly Rewards, Total Rewards, All Transaction
+1. User Monthly Rewards, 
+2. Total Rewards, 
+3. All Transaction
+
+## Database
+To run database for this demo app simply type "npm run serve-json" in treminal.
 
 ## Tables and columns to show
 
@@ -71,3 +76,6 @@ extract latest month form data. Javascript date method is used.
 
 ### filterByName
 filter data by name and aggregate their value. Used reduce array method.
+
+## Test Case
+Added three test case to check loading text in all three tables.

@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import { getMonth } from '../components/getMonth';
 import { filterDataByMonth } from '../components/filterDataByMonth';
 import { SortByDate } from '../components/SortByDate'
@@ -7,8 +6,7 @@ import Users from './Users'
 
 export function UserCombine() {
   const { data, loading, error } = useApi()
-  const memoValue = useMemo(() => data, [data])
-  const sortedDate = SortByDate(memoValue)
+  const sortedDate = SortByDate(data)
   const { latest, secondlatest, thirdlatest, } = getMonth(sortedDate)
   const latestData = filterDataByMonth(sortedDate, latest.monthIndex, latest.year)
   const secondLatestData = filterDataByMonth(sortedDate, secondlatest.monthIndex, secondlatest.year)

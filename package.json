@@ -19,7 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serve-json": "json-server --watch db.json --port 4000"
+    "serve-json": "json-server --watch db.json --port 4000",
+    "coverage": "react-scripts test --coverage --watchAll --collectCoverageFrom='src/component/**/*.{js/jsx}'"
   },
   "eslintConfig": {
     "extends": [
