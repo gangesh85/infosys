@@ -8,4 +8,5 @@ export function PriceToPoint({ data }) {
   );
 }
 
+
 // convert price into rewards.
