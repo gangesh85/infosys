@@ -1,5 +1,5 @@
 import { useApi } from "../services/api";
-import {filterByName} from "../components/filterByName"
+import { filterByName } from "../components/filterByName"
 
 const Rewards = () => {
   const { data, loading, error } = useApi()
@@ -11,7 +11,7 @@ const Rewards = () => {
   if (loading) {
     return <h3>Loading..</h3>
   }
-
+  
   return (
     <>
       <h2>Total Rewards</h2>

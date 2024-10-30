@@ -1,17 +1,11 @@
-import { useEffect, useState } from 'react';
 import { PriceToPoint } from '../components/PriceToPoint';
 import { ToLocalDate } from '../components/ToLocalDate';
 import { useApi } from '../services/api';
 
 
 function Transaction() {
-    const { data, loading, error } = useApi()
-    const [userData, setUserData] = useState()
-    
-    useEffect(() => {
-        setUserData(data)
-    },[data])
-    
+    const { data, loading, error } = useApi()  
+
     if (error) {
         return <h3>ErrorMessage: {error}</h3>
     }
@@ -36,7 +30,7 @@ function Transaction() {
 
                 <tbody>
                     {
-                        userData.map((data) => {
+                        data.map((data) => {
                             return (
                                 <tr key={data.transactionId}>
                                     <td >{data.transactionId}</td>
