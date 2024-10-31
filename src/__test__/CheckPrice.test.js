@@ -1,5 +1,5 @@
 // PriceToPoint.test.js
-import { PriceToPoint } from "../component/priceToPoint";
+import { PriceToPoint } from "../components/PriceToPoint";
 
 describe('PriceToPoint', () => {
   it('calculates price correctly for price > 100', () => {
