@@ -14,10 +14,8 @@ function App() {
       logger.error(error.message);
     }
   }, []);
-
-  if (logs) {
-    console.log(logs);
-  }
+  
+  console.log(logs);
 
   return (
     <>

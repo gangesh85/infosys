@@ -12,7 +12,7 @@ function UsersMonthlyRewards(props) {
             <th>Customer Name</th>
             <th>Transaction ID</th>
             <th>Amount Spent</th>
-            <th>Transaction Month</th>
+            <th>Transaction Date</th>
             <th>Transaction Year</th>
             <th>Points</th>
           </tr>
