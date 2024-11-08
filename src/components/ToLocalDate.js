@@ -1,4 +1,4 @@
-export function ToLocalDate({ data }) {
+export function toLocalDate(data) {
   return new Date(data.purchaseDate).toLocaleDateString();
 }
 

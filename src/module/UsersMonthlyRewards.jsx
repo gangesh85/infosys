@@ -1,8 +1,7 @@
-import { PriceToPoint } from '../components/PriceToPoint'
-import { ToLocalDate } from '../components/ToLocalDate'
-import { TransactionYear } from '../components/TransactionYear'
+import { convertPriceInToPoint } from '../components/convertPriceInToPoint'
+import { toLocalDate } from '../components/toLocalDate' 
 
-function Users(props) {
+function UsersMonthlyRewards(props) {
     return (
     <>
       <h3> {props.month} {props.year}</h3>
@@ -13,7 +12,7 @@ function Users(props) {
             <th>Customer Name</th>
             <th>Transaction ID</th>
             <th>Amount Spent</th>
-            <th>Transaction Date</th>
+            <th>Transaction Month</th>
             <th>Transaction Year</th>
             <th>Points</th>
           </tr>
@@ -27,9 +26,9 @@ function Users(props) {
                   <td>{data.customerName}</td>
                   <td>{data.transactionId}</td>
                   <td>${data.price}</td>
-                  <td>{<ToLocalDate data={data} />}</td>
-                  <td>{<TransactionYear data={data} />}</td>
-                  <td>{<PriceToPoint data={data} />}</td>
+                  <td>{toLocalDate(data)}</td>
+                  <td>{props.year}</td>
+                  <td>{convertPriceInToPoint(data)}</td>
                 </tr>
               )
             })
@@ -40,4 +39,4 @@ function Users(props) {
   )
 }
 
-export default Users
+export default UsersMonthlyRewards

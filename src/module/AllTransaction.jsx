@@ -1,9 +1,9 @@
-import { PriceToPoint } from '../components/PriceToPoint';
-import { ToLocalDate } from '../components/ToLocalDate';
+import { convertPriceInToPoint } from '../components/convertPriceInToPoint';
+import { toLocalDate } from '../components/toLocalDate';
 import { useApi } from '../services/api';
 
 
-function Transaction() {
+function AllTransaction() {
     const { data, loading, error } = useApi()  
 
     if (error) {
@@ -36,10 +36,10 @@ function Transaction() {
                                     <td >{data.transactionId}</td>
                                     <td>{data.customerId}</td>
                                     <td>{data.customerName}</td>
-                                    <td>{<ToLocalDate data={data} />}</td>
+                                    <td>{toLocalDate(data)}</td>
                                     <td>{data.producedPurchased}</td>
                                     <td>${data.price}</td>
-                                    <td><PriceToPoint data={data} /></td>
+                                    <td>{convertPriceInToPoint(data)}</td>
                                 </tr>
                             )
                         })
@@ -50,4 +50,4 @@ function Transaction() {
     )
 }
 
-export default Transaction
+export default AllTransaction

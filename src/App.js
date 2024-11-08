@@ -1,27 +1,29 @@
 import "./App.css";
 import { useEffect } from "react";
-import Rewards from "./module/Rewards";
-import Transaction from "./module/Transaction";
-import UserCombine from "./module/UserCombine";
 import { useLogger } from "./components/logger";
+import CombineUsers from "./module/CombineUsers";
+import TotalRewards from "./module/TotalRewards";
+import AllTransaction from "./module/AllTransaction";
 
 function App() {
-  const {logs, logger} = useLogger()
+  const { logs, logger } = useLogger();
   useEffect(() => {
     try {
-      logger.info('App mounted')
-    }catch(error) {
-      logger.error(error.message)
-    }    
+      logger.info("App mounted");
+    } catch (error) {
+      logger.error(error.message);
+    }
   }, []);
-  console.log(logs)  
 
+  if (logs) {
+    console.log(logs);
+  }
 
   return (
     <>
-      <UserCombine />
-      <Rewards />
-      <Transaction />
+      <CombineUsers />
+      <TotalRewards />
+      <AllTransaction />
     </>
   );
 }
